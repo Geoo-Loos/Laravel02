@@ -1,0 +1,9 @@
+services:
+  web:
+    image: php:8.2-apache
+    container_name: meu_php_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src/app:/var/www/html
+      - ./docker/vhost.conf:/etc/apache2/sites-available/000-default.conf
